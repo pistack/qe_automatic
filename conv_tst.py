@@ -87,7 +87,6 @@ if __name__ == "__main__" :
             f.write(template.format(prefix,ecut,ratio*ecut,k,k,k))
             f.close()
             os.system('mpirun -np 4 ${QE_PATH}/bin/pw.x -in work.in > work.out')
-            break
             if os.path.isfile('CRASH'):
                 continue
             else:
